@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>AOTC-Misc Mod Patches</name>
+	<author>Maelchlor</author>
+	<modVersion>0.1</modVersion>
+	<supportedVersions>
+		<li>1.5</li>
+	</supportedVersions>
+	<packageId>maelchlor.AOTCCustomPatches</packageId>
+	<description>Random assortments of patches for AOTC. These are not considered official, just things I created for the fun of it. they are not balanced or intened to be.</description>
+	<modDependencies>
+    <li>
+      <packageId>para0234.snsAmbitionCosmic</packageId>
+      <displayName>Ambition of the Cosmic</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/3379479793</steamWorkshopUrl>
+      <downloadUrl>https://github.com/Para0234/SNS_AmbitionCosmic/</downloadUrl>
+    </li>
+  </modDependencies>
+	<loadAfter>
+		<li>para0234.snsAmbitionCosmic</li>
+		<li>SamBucher.ADogSaidAnimalProsthetics2</li>
+		<li>kentington.saveourship2</li>
+		<li>para0234.snsambitioncosmicgen4addon</li>
+	</loadAfter>
+	<incompatibleWith>
+		
+	</incompatibleWith>
+</ModMetaData>

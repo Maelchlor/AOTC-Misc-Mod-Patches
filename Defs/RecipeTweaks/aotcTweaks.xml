@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+	
+	<!-- Defs below this line came from AOTC-Custom edition. -->
+	<!-- Smokeleaf Leaves -->
+	<RecipeDef ParentName="SNS_PinnacleFabricator_Item">
+		<defName>SNS_Production_PinnacleFabricator_SmokeleafLeaves</defName>
+		<workAmount>1</workAmount>
+		<label>Draw Smokeleaf Leaves</label>
+		<description>Forge 5000 Smokeleaf Leaves from nothingness.</description>
+		<products><SmokeleafLeaves>5000</SmokeleafLeaves></products>
+	</RecipeDef>
+	<!-- Eternity Cell -->
+	<RecipeDef ParentName="SNS_PinnacleFabricator_Item">
+		<defName>SNSCE_Production_PinnacleFabricator_EternityCell</defName>
+		<workAmount>1</workAmount>
+		<label>Pattern an Eternity Cell</label>
+		<description>Forge an Eternity Cell from nothingness.</description>
+		<products><SNS_Hidden>1</SNS_Hidden></products>
+	</RecipeDef>
+	<!-- Psychoid Leaves -->
+	<RecipeDef ParentName="SNS_PinnacleFabricator_Item">
+		<defName>SNS_Production_PinnacleFabricator_PsychoidLeaves</defName>
+		<workAmount>1</workAmount>
+		<label>Draw Psychoid Leaves</label>
+		<description>Forge 5000 Psychoid Leaves from nothingness.</description>
+		<products><PsychoidLeaves>5000</PsychoidLeaves></products>
+	</RecipeDef>
+</Defs>
