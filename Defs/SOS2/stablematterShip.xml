@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ThingDef ParentName="ShipHeatsinkBase">
+		<defName>shipStableMatterEntropy</defName>
+		<label>Stable Matter anti-entropic heatbank</label>
+		<description>Unimaginably powerful heat bank.</description>
+		<size>(2,2)</size>
+		<graphicData>
+			<texPath>Things/Building/Ship/HeatbankAntiEntropic</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(2,2)</drawSize>
+		</graphicData>
+		<building>
+		</building>
+		<statBases>
+			<MaxHitPoints>99999</MaxHitPoints>
+			<WorkToBuild>500</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Beauty>20</Beauty>
+		</statBases>
+		<costList>
+			<Steel>25</Steel>
+			<Plasteel>50</Plasteel>
+			<SNS_StableMatter>500</SNS_StableMatter>
+			<ComponentSpacer>4</ComponentSpacer>
+			<ArchotechExoticParticles>4</ArchotechExoticParticles>
+		</costList>
+		<comps>
+			<li Class="SaveOurShip2.CompProps_ShipHeat">
+				<compClass>SaveOurShip2.CompShipHeatSink</compClass>
+				<heatCapacity>900000</heatCapacity>
+				<heatVent>900</heatVent>
+				<threat>10</threat>
+				<antiEntropic>true</antiEntropic>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTransmitter</compClass>
+				<transmitsPower>true</transmitsPower>
+			</li>
+		</comps>
+		<researchPrerequisites>
+			<li>ArchotechHeatsink</li>
+		</researchPrerequisites>
+	</ThingDef>
+</Defs>

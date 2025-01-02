@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-<ThingDef ParentName="ShipHeatsinkBase">
+	<ThingDef ParentName="ShipHeatsinkBase">
 		<defName>shipStarSteelEntropy</defName>
 		<label>StarSteel anti-entropic heatbank</label>
 		<description>Advanced anti entropic heat bank.</description>
@@ -748,5 +748,168 @@
 		<researchPrerequisites>
 			<li>ShipTurretPlasma</li>
 		</researchPrerequisites>
+	</ThingDef>
+	<ThingDef ParentName="BuildingBase">
+		<defName>shipStarSteelShipAirlockArchotech</defName>
+		<label>star steel ship airlock</label>
+		<designatorDropdown>Ship_Airlocks</designatorDropdown>
+		<description>Allows access to a ship or divides rooms inside it. Low-energy plasma barriers prevent gases from escaping.</description>
+		<category>Building</category>
+		<thingClass>SaveOurShip2.Building_ShipAirlock</thingClass>
+		<designationCategory>Ship</designationCategory>
+		<altitudeLayer>DoorMoveable</altitudeLayer>
+		<fillPercent>1</fillPercent>
+		<useHitPoints>true</useHitPoints>
+		<graphicData>
+			<texPath>Things/Building/Ship/ArchoAirlock_Mover</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<damageData>
+				<!--  no damage marks because they don't move with the door
+        <rect>(0,0.12,1,0.76)</rect>-->
+				<enabled>false</enabled>
+			</damageData>
+		</graphicData>
+		<uiIconPath>Things/Building/Door/Autodoor_MenuIcon</uiIconPath>
+		<costList>
+			<SNS_Unobtainium>40</SNS_Unobtainium>
+			<ComponentSpacer>1</ComponentSpacer>
+			<Plasteel>25</Plasteel>
+			<Gold>50</Gold>
+		</costList>
+		<comps>
+			<li Class="SaveOurShip2.CompProps_ShipCachePart">
+				<isHull>true</isHull>
+				<isPlating>true</isPlating>
+				<hermetic>true</hermetic>
+				<archotech>true</archotech>
+				<roof>true</roof>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>10</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_Forbiddable"/>
+			<li Class="SaveOurShip2.CompProps_ShipHeat">
+				<compClass>SaveOurShip2.CompShipHeat</compClass>
+			</li>
+			<li Class="SaveOurShip2.CompProps_ResearchUnlock">
+				<unlock>ArchotechUplink</unlock>
+			</li>
+			<li>
+				<compClass>CompColorable</compClass>
+			</li>
+			<li Class="SaveOurShip2.CompProps_Unfold">
+				<extendRate>0.005</extendRate>
+				<retractRate>0.005</retractRate>
+				<retractTime>200</retractTime>
+				<extendDirection>(0,0,-1)</extendDirection>
+				<startOffset>0.5</startOffset>
+				<length>3.0</length>
+				<width>3.0</width>
+				<graphicPath>Things/Building/Ship/DockTube</graphicPath>
+				<graphicPathAlt>Things/Building/Ship/DockTubeV</graphicPathAlt>
+			</li>
+		</comps>
+		<designationHotKey>Misc2</designationHotKey>
+		<placeWorkers>
+			<li>SaveOurShip2.PlaceWorker_ShipHull</li>
+		</placeWorkers>
+		<statBases>
+			<WorkToBuild>1200</WorkToBuild>
+			<MaxHitPoints>5000</MaxHitPoints>
+			<Flammability>0.0</Flammability>
+		</statBases>
+		<selectable>true</selectable>
+		<tickerType>Normal</tickerType>
+		<rotatable>false</rotatable>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<holdsRoof>true</holdsRoof>
+		<staticSunShadowHeight>1.0</staticSunShadowHeight>
+		<blockLight>true</blockLight>
+		<drawerType>RealtimeOnly</drawerType>
+		<building>
+			<shipPart>true</shipPart>
+			<isInert>true</isInert>
+			<canPlaceOverWall>true</canPlaceOverWall>
+			<soundDoorOpenPowered>Door_OpenPowered</soundDoorOpenPowered>
+			<soundDoorClosePowered>Door_ClosePowered</soundDoorClosePowered>
+			<soundDoorOpenManual>Door_OpenManual</soundDoorOpenManual>
+			<soundDoorCloseManual>Door_CloseManual</soundDoorCloseManual>
+			<blueprintGraphicData>
+				<texPath>Things/Building/Door/Door_Blueprint</texPath>
+			</blueprintGraphicData>
+			<blueprintClass>Blueprint_Door</blueprintClass>
+			<roamerCanOpen>false</roamerCanOpen>
+			<paintable>true</paintable>
+		</building>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+	</ThingDef>
+	<ThingDef ParentName="BuildingBase">
+		<defName>shipStarSteelShipHullTileArchotech</defName>
+		<label>StarSteel hull plating</label>
+		<designatorDropdown>Ship_Hulls</designatorDropdown>
+		<thingClass>Building</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<category>Building</category>
+		<graphicData>
+			<texPath>Things/Building/Ship/HullPlateTransparent</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<seeThroughFog>true</seeThroughFog>
+		<uiIconPath>Things/Building/Ship/HullPlateArcho</uiIconPath>
+		<building>
+			<ai_chillDestination>false</ai_chillDestination>
+			<isInert>true</isInert>
+			<isEdifice>false</isEdifice>
+			<shipPart>true</shipPart>
+			<blueprintGraphicData>
+				<texPath>Things/Building/Ship/HullPlate</texPath>
+			</blueprintGraphicData>
+		</building>
+		<coversFloor>false</coversFloor>
+		<altitudeLayer>LowPlant</altitudeLayer>
+		<passability>Standable</passability>
+		<placingDraggableDimensions>2</placingDraggableDimensions>
+		<statBases>
+			<MaxHitPoints>2000</MaxHitPoints>
+			<WorkToBuild>800</WorkToBuild>
+			<Flammability>0.0</Flammability>
+			<Beauty>10</Beauty>
+		</statBases>
+		<description>Spaceworthy hull plating upgraded by Ambition.</description>
+		<costList>
+			<SNS_Unobtainium>3</SNS_Unobtainium>
+			<Plasteel>1</Plasteel>
+			<Gold>1</Gold>
+		</costList>
+		<comps>
+			<li Class="SaveOurShip2.CompProps_ShipCachePart">
+				<isPlating>true</isPlating>
+				<hermetic>true</hermetic>
+				<archotech>true</archotech>
+				<roof>true</roof>
+			</li>
+			<li Class="SaveOurShip2.CompProps_ResearchUnlock">
+				<unlock>ArchotechUplink</unlock>
+			</li>
+			<li>
+				<compClass>CompColorable</compClass>
+			</li>
+		</comps>
+		<placeWorkers>
+			<li>SaveOurShip2.PlaceWorker_ShipPlating</li>
+		</placeWorkers>
+		<rotatable>false</rotatable>
+		<selectable>false</selectable>
+		<neverMultiSelect>true</neverMultiSelect>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<constructEffect>ConstructMetal</constructEffect>
+		<designationHotKey>Misc1</designationHotKey>
+		<fillPercent>0.0</fillPercent>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+		<designationCategory>Ship</designationCategory>
 	</ThingDef>
 </Defs>
