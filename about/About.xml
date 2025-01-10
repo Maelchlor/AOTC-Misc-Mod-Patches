@@ -7,7 +7,15 @@
 		<li>1.5</li>
 	</supportedVersions>
 	<packageId>maelchlor.AOTCCustomPatches</packageId>
-	<description>Random assortments of patches for AOTC. These are not considered official, just things I created for the fun of it. they are not balanced or intened to be.</description>
+	<description>Random assortments of patches for AOTC. These are not considered official, just things I created for the fun of it. they are not balanced.
+
+This patch set is currently severely WIP, items may be removed or added at any time.
+
+Currently has patches for the following mods:
+SOS2
+Mechanite Forge
+Universal Pipes
+</description>
 	<modDependencies>
     <li>
       <packageId>para0234.snsAmbitionCosmic</packageId>
@@ -15,12 +23,19 @@
       <steamWorkshopUrl>steam://url/CommunityFilePage/3379479793</steamWorkshopUrl>
       <downloadUrl>https://github.com/Para0234/SNS_AmbitionCosmic/</downloadUrl>
     </li>
+	<li>
+		<packageId>para0234.SNSAmbitionCosmicGen4Addon</packageId>
+		<displayName>AOTC: True Pinnacle of Creation[Continued]</displayName>
+		<steamWorkshopUrl>steam://url/CommunityFilePage/3380758018</steamWorkshopUrl>
+	</li>
   </modDependencies>
 	<loadAfter>
 		<li>para0234.snsAmbitionCosmic</li>
 		<li>SamBucher.ADogSaidAnimalProsthetics2</li>
 		<li>kentington.saveourship2</li>
 		<li>para0234.snsambitioncosmicgen4addon</li>
+		<li>CruelMoose.sos2pipe</li>
+		<li>Horo.MechaniteForge.11</li>
 	</loadAfter>
 	<incompatibleWith>
 		

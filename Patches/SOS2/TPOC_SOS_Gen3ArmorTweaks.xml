@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<!--
+	EVA patcher didn't work. back to digging into this...
+	
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Save Our Ship 2</li>
+		</mods>
+		<li Class="PatchOperationAdd">
+            <xpath>/Defs/ApparelBase[defName="ApparelStableMatterPowerArmorHelmetBase"]/li/equippedStatOffsets</xpath>
+            <value>
+				<DecompressionResistance>1</DecompressionResistance>
+				<HypoxiaResistance>1</HypoxiaResistance>
+				<VacuumSpeedMultiplier>1</VacuumSpeedMultiplier>
+            </value>
+		</li>
+		<li Class="PatchOperationAdd">
+            <xpath>/Defs/ApparelBase[defName="SNS_Apparel_StableMatterPowerArmor"]/li/equippedStatOffsets</xpath>
+            <value>
+				<DecompressionResistance>1</DecompressionResistance>
+				<HypoxiaResistance>1</HypoxiaResistance>
+				<VacuumSpeedMultiplier>1</VacuumSpeedMultiplier>
+            </value>
+		</li>
+	</Operation>-->
+</Patch>

@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
 	
+	<RecipeDef ParentName="SNS_PinnacleFabricator_Item">
+		<defName>SNS_Production_PinnacleFabricator_Beer</defName>
+		<workAmount>1</workAmount>
+		<label>Draw Beer</label>
+		<description>Forge 50 Beer from nothingness.</description>
+		<products><Beer>50</Beer></products>
+	</RecipeDef>
+
 	<!-- Defs below this line came from AOTC-Custom edition. -->
 	<!-- Smokeleaf Leaves -->
 	<RecipeDef ParentName="SNS_PinnacleFabricator_Item">

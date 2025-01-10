@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Eccentric Tech - Defense Grid</li>
+		</mods>
+			<match Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName="shipStarSteel_Beamtech" or defName="shipStarSteelShipAirlockArchotech" or defName="shipeternium_Beamtech"]/comps</xpath>
+					<value>
+						<li Class="EccentricDefenseGrid.CompProperties_DefenseConduit">
+						</li>
+					</value>
+			</match>
+	</Operation>
+</Patch>

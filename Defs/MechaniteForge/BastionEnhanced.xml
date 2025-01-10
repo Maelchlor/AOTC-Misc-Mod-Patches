@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!-- Bastion -->
+	<ThingDef ParentName="DrugPillBase">
+		<defName>AOTC-E-MFBastion</defName>
+		<label>Infused bastion</label>
+		<description>A relatively unique advancement in the fields of quantum physics, mechanites, and someone deciding, "why not?". By attuning the mechanites in a very specific way they cause anything that hit the host to be repulsed. Takes a significant toll on the energy reserves though so cover is adviced to be taken once hit.\n\nBeing under the influence of these mechanites Will require a higher nutritional intake, so be advised.</description>
+		<graphicData>
+			<texPath>Things/Item/Drug/Bastion/Bastion</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<rotatable>false</rotatable>
+		<statBases>
+			<MarketValue>7000</MarketValue>
+			<Mass>0.01</Mass>
+		</statBases>
+		<techLevel>Spacer</techLevel>
+		<ingestible>
+			<drugCategory>Medical</drugCategory>
+			<joy>0.0</joy>
+			<outcomeDoers>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>AOTC-E-MFBastionHigh</hediffDef>
+					<severity>500.00</severity>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+		<comps>
+			<li Class="CompProperties_Drug">
+				<listOrder>1011</listOrder>
+			</li>
+		</comps>
+	</ThingDef>
+	<HediffDef>
+		<defName>AOTC-E-MFBastionHigh</defName>
+		<label>Infused bastion</label>
+		<description>Eternium infused Bastion is in your system, will repel any incoming damage much like a personal shield.</description>
+		<defaultLabelColor>(0.6,0.85,0.91)</defaultLabelColor>
+		<scenarioCanAdd>true</scenarioCanAdd>
+		<hediffClass>MechaniteForge.ShieldHediff</hediffClass>
+		<initialSeverity>500.0</initialSeverity>
+		<maxSeverity>400000.0</maxSeverity>
+		<isBad>false</isBad>
+		
+		<stages>
+			<li>
+				<label>Shield broken</label>
+				<minSeverity>0.0</minSeverity>
+				<hungerRateFactor>3.0</hungerRateFactor>
+				<capMods>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.1</offset>
+					</li>
+					<li>
+						<capacity>Breathing</capacity>
+						<offset>0.1</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>0.1</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>Low shield charge</label>
+				<minSeverity>5.0</minSeverity>
+				<hungerRateFactor>2.15</hungerRateFactor>
+			</li>
+			<li>
+				<label>Partial shield charge</label>
+				<minSeverity>20.00</minSeverity>
+				<hungerRateFactor>1.1</hungerRateFactor>
+			</li>
+			<li>
+				<label>Full shield charge</label>
+				<minSeverity>10000.00</minSeverity>
+				<hungerRateFactor>1.05</hungerRateFactor>
+			</li>
+		</stages>
+	</HediffDef>
+	<ThingDef ParentName="DrugPillBase">
+		<defName>AOTC-S-MFBastion</defName>
+		<label>Extreme Bastion</label>
+		<description>A relatively unique advancement in the fields of quantum physics, mechanites, and then someone decided to go way too far. By attuning the mechanites in a very specific way they cause anything that hit the host to be repulsed. Takes a significant toll on the energy reserves though so cover is adviced to be taken once hit.\n\nDue to the addition of stable matter, people have reported less hunger.</description>
+		<graphicData>
+			<texPath>Things/Item/Drug/Bastion/Bastion</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<rotatable>false</rotatable>
+		<statBases>
+			<MarketValue>7000</MarketValue>
+			<Mass>0.01</Mass>
+		</statBases>
+		<techLevel>Spacer</techLevel>
+		<ingestible>
+			<drugCategory>Medical</drugCategory>
+			<joy>0.0</joy>
+			<outcomeDoers>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>AOTC-S-MFBastionHigh</hediffDef>
+					<severity>5000.00</severity>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+		<comps>
+			<li Class="CompProperties_Drug">
+				<listOrder>1011</listOrder>
+			</li>
+		</comps>
+	</ThingDef>
+	<HediffDef>
+		<defName>AOTC-S-MFBastionHigh</defName>
+		<label>Extreme bastion</label>
+		<description>Stable matter infused Bastion is in your system, will repel any incoming damage much like a personal shield.</description>
+		<defaultLabelColor>(0.6,0.85,0.91)</defaultLabelColor>
+		<scenarioCanAdd>true</scenarioCanAdd>
+		<hediffClass>MechaniteForge.ShieldHediff</hediffClass>
+		<initialSeverity>5000.0</initialSeverity>
+		<maxSeverity>800000.0</maxSeverity>
+		<isBad>false</isBad>
+		
+		<stages>
+			<li>
+				<label>Shield broken</label>
+				<minSeverity>0.0</minSeverity>
+				<hungerRateFactor>3.0</hungerRateFactor>
+				<capMods>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>2</offset>
+					</li>
+					<li>
+						<capacity>Breathing</capacity>
+						<offset>2</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>2</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>Low shield charge</label>
+				<minSeverity>8.0</minSeverity>
+				<hungerRateFactor>0.15</hungerRateFactor>
+				<capMods>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>2</offset>
+					</li>
+					<li>
+						<capacity>Breathing</capacity>
+						<offset>2</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>2</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>Partial shield charge</label>
+				<minSeverity>80.00</minSeverity>
+				<hungerRateFactor>0.1</hungerRateFactor>
+				<capMods>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>2</offset>
+					</li>
+					<li>
+						<capacity>Breathing</capacity>
+						<offset>2</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>2</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>Full shield charge</label>
+				<minSeverity>70000.00</minSeverity>
+				<hungerRateFactor>0.05</hungerRateFactor>
+				<capMods>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>2</offset>
+					</li>
+					<li>
+						<capacity>Breathing</capacity>
+						<offset>2</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>2</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_Immunizable">
+				<severityPerDayNotImmune>1000</severityPerDayNotImmune> 
+			</li>
+		</comps>
+	</HediffDef>
+	<RecipeDef>
+		<defName>AOTC-S-MFFabricateBastion</defName>
+		<label>fabricate Extreme bastion</label>
+		<description>Fabricates Bastion, enhanced with Eternium. A product of science.</description>
+		<jobString>Fabricating Bastion.</jobString>
+		<workSpeedStat>ResearchSpeed</workSpeedStat>
+		<effectWorking>Cook</effectWorking>
+		<soundWorking>Recipe_Machining</soundWorking>
+		<workAmount>16000</workAmount>
+		<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+		<researchPrerequisite>MFManufactureBastion</researchPrerequisite>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>MFMechanitesBase</li>
+					</thingDefs>
+				</filter>
+				<count>100</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>SNS_StableMatter</li>
+					</thingDefs>
+				</filter>
+				<count>100</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>MFMechanitesBase</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<AOTC-S-MFBastion>1</AOTC-S-MFBastion>
+		</products>
+		<skillRequirements>
+			<Intellectual>10</Intellectual>
+		</skillRequirements>
+		<workSkill>Intellectual</workSkill>
+		<recipeUsers>
+			<li>MFMechaniteForge</li>
+		</recipeUsers>
+	</RecipeDef>
+	<RecipeDef>
+		<defName>AOTC-E-MFFabricateBastion</defName>
+		<label>fabricate Enhanced bastion</label>
+		<description>Fabricates Bastion, enhanced with Eternium. A product of science.</description>
+		<jobString>Fabricating Bastion.</jobString>
+		<workSpeedStat>ResearchSpeed</workSpeedStat>
+		<effectWorking>Cook</effectWorking>
+		<soundWorking>Recipe_Machining</soundWorking>
+		<workAmount>16000</workAmount>
+		<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+		<researchPrerequisite>MFManufactureBastion</researchPrerequisite>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>MFMechanitesBase</li>
+					</thingDefs>
+				</filter>
+				<count>100</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>SNS_Eternium</li>
+					</thingDefs>
+				</filter>
+				<count>100</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>MFMechanitesBase</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<AOTC-E-MFBastion>1</AOTC-E-MFBastion>
+		</products>
+		<skillRequirements>
+			<Intellectual>10</Intellectual>
+		</skillRequirements>
+		<workSkill>Intellectual</workSkill>
+		<recipeUsers>
+			<li>MFMechaniteForge</li>
+		</recipeUsers>
+	</RecipeDef>
+</Defs>

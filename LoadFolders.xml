@@ -1,8 +1,9 @@
 <loadFolders>
 	<v1.5>
-		<li>\</li>
-		<li>Textures\Things\Buildings</li>
-		<li>Defs\RecipeTweaks</li>
-		<li IfModActive="kentington.saveourship2">Defs\SOS2</li>
+		<li>Defs/RecipeTweaks</li>
+		<li IfModActive="kentington.saveourship2">Defs/SOS2</li>
+		<li IfModActive="kentington.saveourship2">Patches/SOS2</li>
+		<li IfModActive="Horo.MechaniteForge.11">Defs/MechaniteForge</li>
+		<li IfModActive="CruelMoose.sos2pipe">Patches/universalPipesPatch</li>
 	</v1.5>
 </loadFolders>

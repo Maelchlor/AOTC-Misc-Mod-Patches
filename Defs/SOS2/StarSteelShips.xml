@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-<ThingDef ParentName="ShipHeatsinkBase">
+	<ThingDef ParentName="ShipHeatsinkBase">
 		<defName>shipStarSteelEntropy</defName>
-		<label>StarSteel anti-entropic heatbank</label>
+		<label>Star Steel anti-entropic heatbank</label>
 		<description>Advanced anti entropic heat bank.</description>
 		<size>(2,2)</size>
 		<graphicData>
@@ -44,7 +44,7 @@
 	</ThingDef>
 	<ThingDef ParentName="BuildingShipBase">
 		<defName>shipStarSteel_Engine</defName>
-		<label>StarSteel rocket engine</label>
+		<label>Star Steel rocket engine</label>
 		<designatorDropdown>Ship_Engines</designatorDropdown>
 		<thingClass>Building</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
@@ -121,7 +121,7 @@
 	</ThingDef>
 	<ThingDef ParentName="BuildingBase">
 		<defName>shipStarSteelTechShieldGenerator</defName>
-		<label>StarSteel shield generator</label>
+		<label>Star Steel shield generator</label>
 		<designatorDropdown>Ship_Shields</designatorDropdown>
 		<description>An advanced shielding device which projects a momentum repulsor field. Shots can go out, but not in.\n\nGenerates 50% of a standard shield's heat when it blocks attacks. If no heatsink capacity is available, the shield will be damaged and require repairs.\n\nCaptains are advised to drop shields once coolant reaches very high temperature, or risk heatsink damage.</description>
 		<size>(3,3)</size>
@@ -151,7 +151,7 @@
 			<li Class="SaveOurShip2.CompProps_ShipHeat">
 				<compClass>SaveOurShip2.CompShipHeatShield</compClass>
 				<heatMultiplier>0.5</heatMultiplier>
-				<color>(0,255,0)</color>
+				<color>(195,200,250)</color>
 			</li>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
@@ -183,7 +183,7 @@
 	</ThingDef>
 	<ThingDef ParentName="BuildingShipHullBase">
 		<defName>shipStarSteel_Beamtech_Unpowered</defName>
-		<label>StarSteel ship hull (unpowered)</label>
+		<label>Star Steel ship hull (unpowered)</label>
 		<designatorDropdown>Ship_Beams_Archotech</designatorDropdown>
 		<thingClass>Building</thingClass>
 		<graphicData>
@@ -208,7 +208,7 @@
 		<uiIconPath>Things/Building/Ship/ShipBeam_Archotech_UI2</uiIconPath>
 		<statBases>
 			<WorkToBuild>600</WorkToBuild>
-			<MaxHitPoints>95000</MaxHitPoints>
+			<MaxHitPoints>15000</MaxHitPoints>
 			<Flammability>0</Flammability>
 			<Beauty>5</Beauty>
 		</statBases>
@@ -248,7 +248,7 @@
 	</ThingDef>
 	<ThingDef ParentName="BuildingShipHullBase">
 		<defName>shipStarSteel_Beamtech</defName>
-		<label>StarSteel ship hull</label>
+		<label>Star Steel ship hull</label>
 		<designatorDropdown>Ship_Beams_Archotech</designatorDropdown>
 		<thingClass>Building</thingClass>
 		<graphicData>
@@ -273,7 +273,7 @@
 		<uiIconPath>Things/Building/Ship/ShipBeam_Archotech_UI</uiIconPath>
 		<statBases>
 			<WorkToBuild>700</WorkToBuild>
-			<MaxHitPoints>95000</MaxHitPoints>
+			<MaxHitPoints>15000</MaxHitPoints>
 			<Flammability>0</Flammability>
 			<Beauty>1</Beauty>
 		</statBases>
@@ -321,7 +321,7 @@
 	</ThingDef>
 	<ThingDef ParentName="BuildingBase">
 		<defName>shipStarSteelCapacitor</defName>
-		<label>StarSteel capacitor array</label>
+		<label>Star Steel capacitor array</label>
 		<designatorDropdown>Ship_Capacitors</designatorDropdown>
 		<thingClass>SaveOurShip2.Building_ShipCapacitor</thingClass>
 		<drawerType>MapMeshAndRealTime</drawerType>
@@ -378,245 +378,6 @@
 		<researchPrerequisites>
 			<li>ShipCapacitor</li>
 		</researchPrerequisites>
-	</ThingDef>
-	<ThingDef ParentName="ShipHeatsinkBase">
-		<defName>shipStarSteelHeatsink</defName>
-		<label>large StarSteel heatsink</label>
-		<altitudeLayer>Gas</altitudeLayer>
-		<description>A heatsink infused with starsteel that removes heat from the heat network. Will take damage if coolant gets near maximum heat capacity and release all heat stored if destroyed. Will slowly replenish capacity from depletion when not in battle. Does not function if the ship is cloaked.</description>
-		<size>(4,4)</size>
-		<graphicData>
-			<texPath>Things/Building/Ship/HeatsinkLarge</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>(4,4)</drawSize>
-		</graphicData>
-		<statBases>
-			<MaxHitPoints>9000</MaxHitPoints>
-			<WorkToBuild>12000</WorkToBuild>
-			<Flammability>0</Flammability>
-			<Beauty>-2</Beauty>
-		</statBases>
-		<passability>Impassable</passability>
-		<seeThroughFog>true</seeThroughFog>
-		<costList>
-			<Steel>500</Steel>
-			<Plasteel>125</Plasteel>
-			<ComponentSpacer>10</ComponentSpacer>
-			<ComponentIndustrial>10</ComponentIndustrial>
-			<SNS_Unobtainium>100</SNS_Unobtainium>
-		</costList>
-		<comps>
-			<li Class="SaveOurShip2.CompProps_ShipHeat">
-				<compClass>SaveOurShip2.CompShipHeatSink</compClass>
-				<showOnRoof>true</showOnRoof>
-				<heatCapacity>100000</heatCapacity>
-				<heatVent>80</heatVent>
-				<heatLoss>20</heatLoss>
-				<threat>50</threat>
-			</li>
-			<li Class="CompProperties_Power">
-				<compClass>CompPowerTransmitter</compClass>
-				<transmitsPower>true</transmitsPower>
-			</li>
-			<li>
-				<compClass>CompColorable</compClass>
-			</li>
-		</comps>
-		<building>
-			<paintable>true</paintable>
-		</building>
-		<researchPrerequisites>
-			<li>ShipHeatsink</li>
-		</researchPrerequisites>
-	</ThingDef>
-	<ThingDef ParentName="BaseGrenadeProjectile">
-		<defName>shipStarSteelProj_ShipTurretLaser</defName>
-		<label>laser beam</label>
-		<thingClass>SaveOurShip2.Projectile_ExplosiveShipLaser</thingClass>
-		<graphicData>
-			<texPath>Things/Building/Ship/HullPlateTransparent</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-			<shaderType>TransparentPostLight</shaderType>
-		</graphicData>
-		<projectile>
-			<explosionRadius>10</explosionRadius>
-			<damageDef>StarSteelShipLaserSmall</damageDef>
-			<speed>100</speed>
-		</projectile>
-	</ThingDef>
-	<ThingDef ParentName="BaseGrenadeProjectile">
-		<defName>shipStarSteelProj_ShipTurretLaserTwo</defName>
-		<label>laser beam</label>
-		<thingClass>SaveOurShip2.Projectile_ExplosiveShipLaser</thingClass>
-		<graphicData>
-			<texPath>Things/Building/Ship/HullPlateTransparent</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-			<shaderType>TransparentPostLight</shaderType>
-		</graphicData>
-		<projectile>
-			<explosionRadius>20</explosionRadius>
-			<damageDef>StarSteelShipLaserTwo</damageDef>
-			<speed>150</speed>
-		</projectile>
-	</ThingDef>
-	<ThingDef ParentName="ShipTurretBuilding">
-		<defName>shipStarSteelTurret_Laser_Large</defName>
-		<label>StarSteel large laser turret</label>
-		<designatorDropdown>ShipTurrets_Laser</designatorDropdown>
-		<description>A large turret that fires a powerful laser. While it can inflict devastating damage, it is only usable at short range.\n\nCan be safely placed in rooms as it sticks out on top of the ship.\nMust be connected to a pilot/tactical console or AI core via the heat network.\nRequires sufficient stored power and heat capacity to function.</description>
-		<graphicData>
-			<texPath>Things/Building/Ship/HardpointRed</texPath>
-			<drawSize>(3,3)</drawSize>
-		</graphicData>
-		<comps>
-			<li Class="CompProperties_Stunnable">
-				<affectedDamageDefs>
-					<li>EMP</li>
-				</affectedDamageDefs>
-			</li>
-			<li Class="SaveOurShip2.CompProps_ShipHeat">
-				<compClass>SaveOurShip2.CompShipHeat</compClass>
-				<showOnRoof>true</showOnRoof>
-				<heatPerPulse>30</heatPerPulse>
-				<energyToFire>240</energyToFire>
-				<optRange>50</optRange>
-				<maxRange>100</maxRange>
-				<projectileSpeed>10</projectileSpeed>
-				<singleFireSound>ShipCombatLaserLarge</singleFireSound>
-				<threat>30</threat>
-			</li>
-			<li Class="CompProperties_Power">
-				<compClass>CompPowerTrader</compClass>
-				<basePowerConsumption>150</basePowerConsumption>
-				<transmitsPower>true</transmitsPower>
-			</li>
-			<li Class="CompProperties_Flickable"/>
-		</comps>
-		<building>
-			<turretGunDef>ShipTurret_LaserTop_Large</turretGunDef>
-			<turretBurstWarmupTime>1.0</turretBurstWarmupTime>
-			<turretBurstCooldownTime>35.0</turretBurstCooldownTime>
-			<turretTopDrawSize>4</turretTopDrawSize>
-		</building>
-		<costList>
-			<Steel>240</Steel>
-			<Uranium>80</Uranium>
-			<Plasteel>240</Plasteel>
-			<ComponentSpacer>12</ComponentSpacer>
-		</costList>
-		<uiIconPath>Things/Building/Ship/TurretLaser_MenuIcon</uiIconPath>
-		<researchPrerequisites>
-			<li>ShipTurretMedium</li>
-		</researchPrerequisites>
-		<size>(3,3)</size>
-	</ThingDef>
-	<ThingDef ParentName="BaseShipArtilleryWeapon">
-		<defName>shipStarSteelTurret_LaserTop_Large</defName>
-		<label>laser</label>
-		<description>Laser cannon. Short-ranged but devastating.</description>
-		<graphicData>
-			<texPath>Things/Building/Ship/TurretLaser</texPath>
-		</graphicData>
-		<verbs>
-			<li>
-				<label>shoot laser</label>
-				<verbClass>SaveOurShip2.Verb_LaunchProjectileShip</verbClass>
-				<hasStandardCommand>true</hasStandardCommand>
-				<range>1000</range>
-				<warmupTime>0</warmupTime>
-				<forcedMissRadius>1</forcedMissRadius>
-				<noiseRadius>4</noiseRadius>
-				<burstShotCount>24</burstShotCount>
-				<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
-				<requireLineOfSight>false</requireLineOfSight>
-				<targetParams>
-					<canTargetLocations>true</canTargetLocations>
-				</targetParams>
-				<defaultProjectile>Proj_StarSteelShipTurretLaserTwo</defaultProjectile>
-				<spawnDef>Bullet_Fake_Laser</spawnDef>
-				<rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
-			</li>
-		</verbs>
-	</ThingDef>
-	<ThingDef ParentName="ShipTurretBuilding">
-		<defName>shipStarSteelTurret_Laser</defName>
-		<label>StarSteel laser turret</label>
-		<designatorDropdown>ShipTurrets_Laser</designatorDropdown>
-		<description>A starship turret that fires a powerful laser. While it can inflict devastating damage, it is only usable at short range. Can be set to intercept torpedoes rather than firing on the enemy ship. Capable of ship ground defense.\n\nCan be safely placed in rooms as it sticks out on top of the ship.\nMust be connected to a pilot/tactical console or AI core via the heat network.\nRequires sufficient stored power and heat capacity to function.</description>
-		<graphicData>
-			<texPath>Things/Building/Ship/HardpointRed</texPath>
-		</graphicData>
-		<comps>
-			<li Class="CompProperties_Stunnable">
-				<affectedDamageDefs>
-					<li>EMP</li>
-				</affectedDamageDefs>
-			</li>
-			<li Class="SaveOurShip2.CompProps_ShipHeat">
-				<compClass>SaveOurShip2.CompShipHeat</compClass>
-				<showOnRoof>true</showOnRoof>
-				<heatPerPulse>10</heatPerPulse>
-				<energyToFire>80</energyToFire>
-				<optRange>50</optRange>
-				<maxRange>50</maxRange>
-				<projectileSpeed>10</projectileSpeed>
-				<pointDefense>true</pointDefense>
-				<groundDefense>true</groundDefense>
-				<groundProjectile>Bullet_Ground_Laser</groundProjectile>
-				<singleFireSound>ShipCombatLaser</singleFireSound>
-				<threat>10</threat>
-			</li>
-			<li Class="CompProperties_Power">
-				<compClass>CompPowerTrader</compClass>
-				<basePowerConsumption>150</basePowerConsumption>
-				<transmitsPower>true</transmitsPower>
-			</li>
-			<li Class="CompProperties_Flickable"/>
-		</comps>
-		<building>
-			<turretGunDef>ShipTurret_LaserTop</turretGunDef>
-			<turretBurstWarmupTime>0.5</turretBurstWarmupTime>
-			<turretBurstCooldownTime>25.0</turretBurstCooldownTime>
-		</building>
-		<costList>
-			<Steel>80</Steel>
-			<Uranium>20</Uranium>
-			<Plasteel>80</Plasteel>
-			<ComponentSpacer>4</ComponentSpacer>
-		</costList>
-		<uiIconPath>Things/Building/Ship/TurretLaser_Sm_MenuIcon</uiIconPath>
-		<researchPrerequisites>
-			<li>ShipTurretLaser</li>
-		</researchPrerequisites>
-	</ThingDef>
-	<ThingDef ParentName="BaseShipArtilleryWeapon">
-		<defName>shipStarSteelTurret_LaserTop</defName>
-		<label>laser</label>
-		<description>Laser cannon. Short-ranged but devastating.</description>
-		<graphicData>
-			<texPath>Things/Building/Ship/TurretLaserSmall</texPath>
-		</graphicData>
-		<verbs>
-			<li>
-				<label>shoot laser</label>
-				<verbClass>SaveOurShip2.Verb_LaunchProjectileShip</verbClass>
-				<hasStandardCommand>true</hasStandardCommand>
-				<range>500</range>
-				<minRange>31.9</minRange>
-				<warmupTime>0</warmupTime>
-				<forcedMissRadius>1</forcedMissRadius>
-				<noiseRadius>4</noiseRadius>
-				<burstShotCount>12</burstShotCount>
-				<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
-				<requireLineOfSight>false</requireLineOfSight>
-				<targetParams>
-					<canTargetLocations>true</canTargetLocations>
-				</targetParams>
-				<defaultProjectile>Proj_StarSteelShipTurretLaser</defaultProjectile>
-				<spawnDef>Bullet_Fake_Laser</spawnDef>
-				<rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
-			</li>
-		</verbs>
 	</ThingDef>
 	<ThingDef ParentName="BuildingShipBase">
 		<defName>shipStarSteel_Engine_Small</defName>
@@ -694,35 +455,225 @@
 			<SNS_Unobtainium>10</SNS_Unobtainium>
 		</costList>
 	</ThingDef>
-	<DesignatorDropdownGroupDef>
-		<defName>ShipTurrets_Plasma</defName>
-	</DesignatorDropdownGroupDef>
-	<ThingDef ParentName="ShipTurretBuilding">
-		<defName>shipStarSteelTurret_Plasma</defName>
-		<label>StarSteel plasma turret</label>
-		<designatorDropdown>ShipTurrets_Plasma</designatorDropdown>
-		<description>A starship turret that fires a burst of superheated plasma. This balanced weapon can be used at up to medium range. Capable of ship ground defense.\n\nCan be safely placed in rooms as it sticks out on top of the ship.\nMust be connected to a pilot/tactical console or AI core via the heat network.\nRequires sufficient stored power and heat capacity to function.</description>
+	<ThingDef ParentName="BuildingBase">
+		<defName>shipStarSteelShipAirlockArchotech</defName>
+		<label>star steel ship airlock</label>
+		<designatorDropdown>Ship_Airlocks</designatorDropdown>
+		<description>Allows access to a ship or divides rooms inside it. Low-energy plasma barriers prevent gases from escaping.</description>
+		<category>Building</category>
+		<thingClass>SaveOurShip2.Building_ShipAirlock</thingClass>
+		<designationCategory>Ship</designationCategory>
+		<altitudeLayer>DoorMoveable</altitudeLayer>
+		<fillPercent>1</fillPercent>
+		<useHitPoints>true</useHitPoints>
 		<graphicData>
-			<texPath>Things/Building/Ship/HardpointGreen</texPath>
+			<texPath>Things/Building/Ship/ArchoAirlock_Mover</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<damageData>
+				<!--  no damage marks because they don't move with the door
+        <rect>(0,0.12,1,0.76)</rect>-->
+				<enabled>false</enabled>
+			</damageData>
 		</graphicData>
+		<uiIconPath>Things/Building/Door/Autodoor_MenuIcon</uiIconPath>
+		<costList>
+			<SNS_Unobtainium>40</SNS_Unobtainium>
+			<ComponentSpacer>1</ComponentSpacer>
+			<Plasteel>25</Plasteel>
+			<Gold>50</Gold>
+		</costList>
 		<comps>
-			<li Class="CompProperties_Stunnable">
-				<affectedDamageDefs>
-					<li>EMP</li>
-				</affectedDamageDefs>
+			<li Class="SaveOurShip2.CompProps_ShipCachePart">
+				<isHull>true</isHull>
+				<isPlating>true</isPlating>
+				<hermetic>true</hermetic>
+				<archotech>true</archotech>
+				<roof>true</roof>
 			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>10</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_Forbiddable"/>
 			<li Class="SaveOurShip2.CompProps_ShipHeat">
 				<compClass>SaveOurShip2.CompShipHeat</compClass>
-				<showOnRoof>true</showOnRoof>
-				<heatPerPulse>15</heatPerPulse>
-				<energyToFire>50</energyToFire>
-				<optRange>100</optRange>
-				<maxRange>100</maxRange>
-				<projectileSpeed>3</projectileSpeed>
-				<threat>10</threat>
-				<groundDefense>true</groundDefense>
-				<groundProjectile>Bullet_Ground_Plasma</groundProjectile>
-				<groundMissRadius>3</groundMissRadius>
+			</li>
+			<li Class="SaveOurShip2.CompProps_ResearchUnlock">
+				<unlock>ArchotechUplink</unlock>
+			</li>
+			<li>
+				<compClass>CompColorable</compClass>
+			</li>
+			<li Class="SaveOurShip2.CompProps_Unfold">
+				<extendRate>0.005</extendRate>
+				<retractRate>0.005</retractRate>
+				<retractTime>200</retractTime>
+				<extendDirection>(0,0,-1)</extendDirection>
+				<startOffset>0.5</startOffset>
+				<length>3.0</length>
+				<width>3.0</width>
+				<graphicPath>Things/Building/Ship/DockTube</graphicPath>
+				<graphicPathAlt>Things/Building/Ship/DockTubeV</graphicPathAlt>
+			</li>
+		</comps>
+		<designationHotKey>Misc2</designationHotKey>
+		<placeWorkers>
+			<li>SaveOurShip2.PlaceWorker_ShipHull</li>
+		</placeWorkers>
+		<statBases>
+			<WorkToBuild>1200</WorkToBuild>
+			<MaxHitPoints>5000</MaxHitPoints>
+			<Flammability>0.0</Flammability>
+		</statBases>
+		<selectable>true</selectable>
+		<tickerType>Normal</tickerType>
+		<rotatable>false</rotatable>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<holdsRoof>true</holdsRoof>
+		<staticSunShadowHeight>1.0</staticSunShadowHeight>
+		<blockLight>true</blockLight>
+		<drawerType>RealtimeOnly</drawerType>
+		<building>
+			<shipPart>true</shipPart>
+			<isInert>true</isInert>
+			<canPlaceOverWall>true</canPlaceOverWall>
+			<soundDoorOpenPowered>Door_OpenPowered</soundDoorOpenPowered>
+			<soundDoorClosePowered>Door_ClosePowered</soundDoorClosePowered>
+			<soundDoorOpenManual>Door_OpenManual</soundDoorOpenManual>
+			<soundDoorCloseManual>Door_CloseManual</soundDoorCloseManual>
+			<blueprintGraphicData>
+				<texPath>Things/Building/Door/Door_Blueprint</texPath>
+			</blueprintGraphicData>
+			<blueprintClass>Blueprint_Door</blueprintClass>
+			<roamerCanOpen>false</roamerCanOpen>
+			<paintable>true</paintable>
+		</building>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+	</ThingDef>
+	<ThingDef ParentName="BuildingBase">
+		<defName>shipStarSteelShipHullTileArchotech</defName>
+		<label>Star Steel hull plating</label>
+		<designatorDropdown>Ship_Hulls</designatorDropdown>
+		<thingClass>Building</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<category>Building</category>
+		<graphicData>
+			<texPath>Things/Building/Ship/HullPlateTransparent</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<seeThroughFog>true</seeThroughFog>
+		<uiIconPath>Things/Building/Ship/HullPlateArcho</uiIconPath>
+		<building>
+			<ai_chillDestination>false</ai_chillDestination>
+			<isInert>true</isInert>
+			<isEdifice>false</isEdifice>
+			<shipPart>true</shipPart>
+			<blueprintGraphicData>
+				<texPath>Things/Building/Ship/HullPlate</texPath>
+			</blueprintGraphicData>
+		</building>
+		<coversFloor>false</coversFloor>
+		<altitudeLayer>LowPlant</altitudeLayer>
+		<passability>Standable</passability>
+		<placingDraggableDimensions>2</placingDraggableDimensions>
+		<statBases>
+			<MaxHitPoints>2000</MaxHitPoints>
+			<WorkToBuild>800</WorkToBuild>
+			<Flammability>0.0</Flammability>
+			<Beauty>10</Beauty>
+		</statBases>
+		<description>Spaceworthy hull plating upgraded by Ambition.</description>
+		<costList>
+			<SNS_Unobtainium>3</SNS_Unobtainium>
+			<Plasteel>1</Plasteel>
+			<Gold>1</Gold>
+		</costList>
+		<comps>
+			<li Class="SaveOurShip2.CompProps_ShipCachePart">
+				<isPlating>true</isPlating>
+				<hermetic>true</hermetic>
+				<archotech>true</archotech>
+				<roof>true</roof>
+			</li>
+			<li Class="SaveOurShip2.CompProps_ResearchUnlock">
+				<unlock>ArchotechUplink</unlock>
+			</li>
+			<li>
+				<compClass>CompColorable</compClass>
+			</li>
+		</comps>
+		<placeWorkers>
+			<li>SaveOurShip2.PlaceWorker_ShipPlating</li>
+		</placeWorkers>
+		<rotatable>false</rotatable>
+		<selectable>false</selectable>
+		<neverMultiSelect>true</neverMultiSelect>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<constructEffect>ConstructMetal</constructEffect>
+		<designationHotKey>Misc1</designationHotKey>
+		<fillPercent>0.0</fillPercent>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+		<designationCategory>Ship</designationCategory>
+	</ThingDef>
+	<ThingDef ParentName="BuildingShipHullBase">
+		<defName>shipStarSteelInside_PassiveVentArchotech</defName>
+		<label>archotech ship vent</label>
+		<designatorDropdown>Ship_Vents</designatorDropdown>
+		<description>Exchanges heat with the coolant network, cooling or heating a ship's interior to the desired temperature.\n\nCan also heat rooms with electricity.</description>
+		<thingClass>SaveOurShip2.Building_ShipVent</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<category>Building</category>
+		<graphicData>
+			<texPath>Things/Building/Linked/ShipBeam/ShipBeam_Archotech_Atlas</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<linkType>Basic</linkType>
+			<linkFlags>
+				<li>Wall</li>
+				<li>Rock</li>
+			</linkFlags>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+				<edgeTop>Damage/Edge</edgeTop>
+				<edgeBot>Damage/Edge</edgeBot>
+				<edgeLeft>Damage/Edge</edgeLeft>
+				<edgeRight>Damage/Edge</edgeRight>
+			</damageData>
+		</graphicData>
+		<uiIconPath>Things/Building/Ship/BeamVentUI</uiIconPath>
+		<size>(1,1)</size>
+		<rotatable>true</rotatable>
+		<tickerType>Rare</tickerType>
+		<statBases>
+			<WorkToBuild>4000</WorkToBuild>
+			<MaxHitPoints>15000</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<selectable>true</selectable>
+		<costList>
+			<Steel>30</Steel>
+			<Plasteel>5</Plasteel>
+			<ComponentIndustrial>2</ComponentIndustrial>
+			<Gold>10</Gold>
+			<SNS_Unobtainium>60</SNS_Unobtainium>
+		</costList>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<resourcesFractionWhenDeconstructed>0.5</resourcesFractionWhenDeconstructed>
+		<placeWorkers>
+			<li>SaveOurShip2.PlaceWorker_ShipVent</li>
+		</placeWorkers>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<comps>
+			<li Class="SaveOurShip2.CompProps_ShipCachePart">
+				<isHull>true</isHull>
+				<hermetic>true</hermetic>
+				<archotech>true</archotech>
+				<roof>true</roof>
 			</li>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
@@ -730,23 +681,33 @@
 				<transmitsPower>true</transmitsPower>
 			</li>
 			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_TempControl">
+				<energyPerSecond>-64</energyPerSecond>
+			</li>
+			<li Class="SaveOurShip2.CompProps_Overlay">
+				<graphicPath>Things/Building/Ship/Ship_Vent</graphicPath>
+				<size>(1,1,1)</size>
+			</li>
+			<li Class="SaveOurShip2.CompProps_ShipHeat">
+				<compClass>SaveOurShip2.CompShipHeat</compClass>
+			</li>
+			<li Class="SaveOurShip2.CompProps_ResearchUnlock">
+				<unlock>ArchotechUplink</unlock>
+			</li>
+			<li>
+				<compClass>CompColorable</compClass>
+			</li>
 		</comps>
+		<designationCategory>Ship</designationCategory>
+		<designationHotKey>Misc2</designationHotKey>
+		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
 		<building>
-			<turretGunDef>ShipTurret_PlasmaTop</turretGunDef>
-			<turretBurstWarmupTime>0.2</turretBurstWarmupTime>
-			<turretBurstCooldownTime>20.0</turretBurstCooldownTime>
-			<turretTopDrawSize>2</turretTopDrawSize>
+			<shipPart>true</shipPart>
+			<blueprintGraphicData>
+				<texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
+			</blueprintGraphicData>
+			<paintable>true</paintable>
 		</building>
-		<costList>
-			<Steel>80</Steel>
-			<Uranium>20</Uranium>
-			<Plasteel>80</Plasteel>
-			<ComponentSpacer>4</ComponentSpacer>
-			<SNS_Unobtainium>10</SNS_Unobtainium>
-		</costList>
-		<uiIconPath>Things/Building/Ship/TurretPlasma_Sm_MenuIcon</uiIconPath>
-		<researchPrerequisites>
-			<li>ShipTurretPlasma</li>
-		</researchPrerequisites>
 	</ThingDef>
+	
 </Defs>
