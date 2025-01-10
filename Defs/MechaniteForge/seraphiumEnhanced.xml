@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!-- decided not to do this, yet. the defs didn't seem to work how I thought they would. will investigate further later to see how I can fix this. 
+	<ThingDef ParentName="DrugPillBase">
+		<defName>AOTC-E-MFAngelium</defName>
+		<label>Enhanced seraphium</label>
+		<description>Named after the mythical angels in the Abrahamic religions this concoction of mechanites allow miraculous feats to be performed. Immense fortitude is granted to the user in which open wounds clots themselves and even allows over a season to regenerate lost limbs. It is not fine enough in function to heal scars however.\n\nThe enhancement of Eternium is still being investigated.</description>
+		<graphicData>
+			<texPath>Things/Item/Drug/Angelium/Angelium</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<rotatable>false</rotatable>
+		<statBases>
+			<MarketValue>10000</MarketValue>
+			<Mass>0.01</Mass>
+		</statBases>
+		<techLevel>Spacer</techLevel>
+		<ingestible>
+			<drugCategory>Medical</drugCategory>
+			<joy>0.0</joy>
+			<outcomeDoers>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>AOTC-E-MFAngeliumHigh</hediffDef>
+					<severity>1.00</severity>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+		<comps>
+			<li Class="CompProperties_Drug">
+				<listOrder>1011</listOrder>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<HediffDef>
+		<defName>AOTC-E-MFAngeliumHigh</defName>
+		<hediffClass>MechaniteForge.AngeliumHediff</hediffClass>
+		<label>Enhanced Seraphium</label>
+		<description>Seraphium is in your system, greatly increasing the fortitude of your colonist. it is now backed up with Eternium.</description>
+		<defaultLabelColor>(0.6,0.85,0.91)</defaultLabelColor>
+		<isBad>false</isBad>
+		<scenarioCanAdd>true</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		
+		<stages>
+			<li>
+				<painFactor>1.1</painFactor>
+				<capMods>
+					<li>
+						<capacity>BloodFiltration</capacity>
+						<offset>0.35</offset>
+					</li>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<offset>0.35</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<HediffDef>
+		<defName>AOTC-E-MFProtoBodypart</defName>
+		<label>regrowing</label>
+		<description>a regrowing limb</description>
+		<hediffClass>MechaniteForge.GrowingPartHediff</hediffClass>
+		<defaultLabelColor>(0.59, 0.92, 0.69)</defaultLabelColor>
+		<isBad>false</isBad>
+		<addedPartProps>
+			<partEfficiency>0.1</partEfficiency>
+		</addedPartProps>
+		<initialSeverity>0.0</initialSeverity>
+		<maxSeverity>1.0</maxSeverity>
+		<stages>
+			<li>
+				<minSeverity>0</minSeverity>
+				<painOffset>0.2</painOffset>
+			</li>
+			<li>
+				<minSeverity>0.3</minSeverity>
+				<painOffset>0.15</painOffset>
+			</li>
+			<li>
+				<minSeverity>0.6</minSeverity>
+				<painOffset>0.1</painOffset>
+			</li>
+			<li>
+				<minSeverity>0.9</minSeverity>
+				<painOffset>0.05</painOffset>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_Immunizable">
+				<severityPerDayNotImmune>0.14</severityPerDayNotImmune> 
+			</li>
+		</comps>
+	</HediffDef>
+
+
+	<HediffDef>
+		<defName>MFCuredBodypart</defName>
+		<label>cured bodypart</label>
+		<description>A recently cured body part</description>
+		<hediffClass>MechaniteForge.RemovableHediff</hediffClass>
+		<defaultLabelColor>(1.0, 1.0, 1.0)</defaultLabelColor>
+		<isBad>false</isBad>
+		<initialSeverity>0.0</initialSeverity>
+		<maxSeverity>1.0</maxSeverity>
+		<stages>
+			<li>
+				<becomeVisible>false</becomeVisible>
+			</li>
+		</stages>
+	</HediffDef>
+	<RecipeDef>
+		<defName>AOTC-E-MFFabricateAngelium</defName>
+		<label>fabricate Enhanced seraphium</label>
+		<description>Fabricates Seraphium. A miracle drug.</description>
+		<jobString>Fabricating Seraphium.</jobString>
+		<workSpeedStat>ResearchSpeed</workSpeedStat>
+		<effectWorking>Cook</effectWorking>
+		<soundWorking>Recipe_Machining</soundWorking>
+		<workAmount>16000</workAmount>
+		<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+		<researchPrerequisite>MFManufactureAngelium</researchPrerequisite>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>MFMechanitesBase</li>
+					</thingDefs>
+				</filter>
+				<count>120</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>SNS_Eternium</li>
+					</thingDefs>
+				</filter>
+				<count>120</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>MFMechanitesBase</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<AOTC-E-MFAngelium>1</AOTC-E-MFAngelium>
+		</products>
+		<skillRequirements>
+			<Intellectual>15</Intellectual>
+		</skillRequirements>
+		<workSkill>Intellectual</workSkill>
+		<recipeUsers>
+			<li>MFMechaniteForge</li>
+		</recipeUsers>
+	</RecipeDef> -->
+</Defs>

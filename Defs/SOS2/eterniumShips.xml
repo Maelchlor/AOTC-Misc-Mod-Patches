@@ -78,11 +78,11 @@
 			</li>
 			<li Class="CompProperties_Flickable"/>
 			<li Class="CompProperties_Refuelable">
-				<fuelCapacity>1.0</fuelCapacity>
+				<fuelCapacity>100.0</fuelCapacity>
 				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
 				<fuelFilter>
 					<thingDefs>
-						<li>Chemfuel</li>
+						<li>SNS_CosmicMatter</li>
 					</thingDefs>
 				</fuelFilter>
 				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
@@ -94,7 +94,7 @@
 			</li>
 			<li Class="SaveOurShip2.CompProps_EngineTrail">
 				<thrust>8</thrust>
-				<takeOff>true</takeOff>
+				<takeOff>false</takeOff>
 				<fuelUse>0</fuelUse>
 				<soundWorking>ShipEngineFuel</soundWorking>
 			</li>
@@ -146,7 +146,7 @@
 			<li Class="SaveOurShip2.CompProps_ShipHeat">
 				<compClass>SaveOurShip2.CompShipHeatShield</compClass>
 				<heatMultiplier>0.3</heatMultiplier>
-				<color>(0,255,0)</color>
+				<color>(0,161,205)</color>
 			</li>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
