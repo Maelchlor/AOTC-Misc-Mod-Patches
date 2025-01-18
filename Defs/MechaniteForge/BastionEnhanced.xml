@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-	<!-- Bastion -->
+	<!-- FAILED IN TESTING
 	<ThingDef ParentName="DrugPillBase">
 		<defName>AOTC-E-MFBastion</defName>
 		<label>Infused bastion</label>
@@ -294,4 +294,5 @@
 			<li>MFMechaniteForge</li>
 		</recipeUsers>
 	</RecipeDef>
+	-->
 </Defs>

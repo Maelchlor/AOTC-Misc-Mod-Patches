@@ -13,8 +13,9 @@ This patch set is currently severely WIP, items may be removed or added at any t
 
 Currently has patches for the following mods:
 SOS2
-Mechanite Forge
 Universal Pipes
+
+removed integration with Mechanite Forge. The enhanced items were not working. 
 </description>
 	<modDependencies>
     <li>
@@ -36,6 +37,7 @@ Universal Pipes
 		<li>para0234.snsambitioncosmicgen4addon</li>
 		<li>CruelMoose.sos2pipe</li>
 		<li>Horo.MechaniteForge.11</li>
+		<li>memer.minisos2</li>
 	</loadAfter>
 	<incompatibleWith>
 		

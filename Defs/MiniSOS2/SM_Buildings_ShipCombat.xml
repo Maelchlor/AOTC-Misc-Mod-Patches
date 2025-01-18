@@ -1,0 +1,360 @@
+<Defs>
+<!-- Small Laser turret -->
+	<ThingDef ParentName="ShipTurretBuilding">
+		<defName>AOTC-SM-ShipTurret_LaserSmall</defName>
+		<label>Stable Matter small laser turret</label>
+		<designatorDropdown>ShipTurrets_Laser</designatorDropdown>
+		<description>A starfighter turret that fires an energy laser. While it can inflict modest damage, it is only usable at short range. Can be set to intercept torpedoes rather than firing on the enemy ship. Capable of ship ground defense.\n\nCan be safely placed in rooms as it sticks out on top of the ship.\nMust be connected to a pilot/tactical console or AI core via the heat network.\nRequires sufficient stored power and heat capacity to function.  \n\nThis particular model is much smaller, but deals drastically less damage with less efficiency.</description>
+		<graphicData>
+			<texPath>Things/Building/Ship/HardpointRed</texPath>
+			<drawSize>(1,1)</drawSize>
+		</graphicData>
+		<comps>
+			<li Class="CompProperties_Stunnable">
+				<affectedDamageDefs>
+					<li>EMP</li>
+				</affectedDamageDefs>
+			</li>
+			<li Class="SaveOurShip2.CompProps_ShipHeat">
+				<compClass>SaveOurShip2.CompShipHeat</compClass>
+				<showOnRoof>true</showOnRoof>
+				<heatPerPulse>20</heatPerPulse>
+				<energyToFire>40</energyToFire>
+				<optRange>50</optRange>
+				<maxRange>50</maxRange>
+				<projectileSpeed>10</projectileSpeed>
+				<pointDefense>true</pointDefense>
+				<groundDefense>true</groundDefense>
+				<groundProjectile>Bullet_Ground_LaserSmall</groundProjectile>
+				<singleFireSound>ShipCombatLaser</singleFireSound>
+				<threat>5</threat>
+				<laserColor>(232,204,255)</laserColor>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>100</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+		</comps>
+		<building>
+			<turretGunDef>ShipTurret_LaserTop</turretGunDef>
+			<turretBurstWarmupTime>0.05</turretBurstWarmupTime>
+			<turretBurstCooldownTime>1.5</turretBurstCooldownTime>
+			<turretTopDrawSize>1.0</turretTopDrawSize>
+		</building>
+		<costList>
+			<SNS_StableMatter>40</SNS_StableMatter>
+			<Uranium>10</Uranium>
+			<Plasteel>40</Plasteel>
+			<ComponentSpacer>2</ComponentSpacer>
+		</costList>
+		<uiIconPath>Things/Building/Ship/TurretLaser_SmSmall_MenuIcon</uiIconPath>
+		<researchPrerequisites>
+			<li>ShipTurretLaser</li>
+		</researchPrerequisites>
+		<size>(1,1)</size>
+	</ThingDef>
+	<ThingDef ParentName="BaseShipArtilleryWeapon">
+		<defName>AOTC-SM-ShipTurret_LaserSmallSmallTop</defName>
+		<label>Stable Matter laser</label>
+		<description>Small laser cannon for starfighters. Short-ranged but devastating. </description>
+		<graphicData>
+			<texPath>Things/Building/Ship/TurretLaserSmallSmall</texPath>
+			<drawSize>(1,1)</drawSize>
+		</graphicData>
+		<verbs>
+			<li>
+				<label>Shoot laser</label>
+				<verbClass>SaveOurShip2.Verb_LaunchProjectileShip</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<range>500</range>
+				<minRange>31.9</minRange>
+				<warmupTime>0</warmupTime>
+				<forcedMissRadius>1</forcedMissRadius>
+				<noiseRadius>4</noiseRadius>
+				<burstShotCount>12</burstShotCount>
+				<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+				<requireLineOfSight>false</requireLineOfSight>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+				<defaultProjectile>Proj_ShipTurretLaserSmall</defaultProjectile>
+				<spawnDef>Bullet_Fake_Laser</spawnDef>
+				<rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
+			</li>
+		</verbs>
+	</ThingDef>
+	<!-- Small Plasma -->
+	<ThingDef ParentName="ShipTurretBuilding">
+		<defName>AOTC-SM-ShipTurret_PlasmaSmall</defName>
+		<label>Stable Matter small plasma turret</label>
+		<designatorDropdown>ShipTurrets_Plasma</designatorDropdown>
+		<description>A starship turret that fires a burst of superheated plasma. This balanced weapon can be used at up to medium range. Capable of ship ground defense.\n\nCan be safely placed in rooms as it sticks out on top of the ship.\nMust be connected to a pilot/tactical console or AI core via the heat network.\nRequires sufficient stored power and heat capacity to function. \n\nThis particular model is much smaller, but deals drastically less damage with less efficiency.</description>
+		<graphicData>
+			<texPath>Things/Building/Ship/HardpointGreen</texPath>
+			<drawSize>(1,1)</drawSize>
+		</graphicData>
+		<comps>
+			<li Class="CompProperties_Stunnable">
+				<affectedDamageDefs>
+					<li>EMP</li>
+				</affectedDamageDefs>
+			</li>
+			<li Class="SaveOurShip2.CompProps_ShipHeat">
+				<compClass>SaveOurShip2.CompShipHeat</compClass>
+				<showOnRoof>true</showOnRoof>
+				<heatPerPulse>10</heatPerPulse>
+				<energyToFire>35</energyToFire>
+				<optRange>100</optRange>
+				<maxRange>100</maxRange>
+				<projectileSpeed>3</projectileSpeed>
+				<threat>5</threat>
+				<groundDefense>true</groundDefense>
+				<groundProjectile>Bullet_Ground_Plasma_Small</groundProjectile>
+				<groundMissRadius>3</groundMissRadius>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>100</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+		</comps>
+		<building>
+			<turretGunDef>ShipTurret_PlasmaTop</turretGunDef>
+			<turretBurstWarmupTime>0.05</turretBurstWarmupTime>
+			<turretBurstCooldownTime>1.5</turretBurstCooldownTime>
+			<turretTopDrawSize>1</turretTopDrawSize>
+		</building>
+		<costList>
+			<SNS_StableMatter>40</SNS_StableMatter>
+			<Uranium>10</Uranium>
+			<Plasteel>40</Plasteel>
+			<ComponentSpacer>2</ComponentSpacer>
+		</costList>
+		<uiIconPath>Things/Building/Ship/TurretPlasma_SmSmall_MenuIcon</uiIconPath>
+		<researchPrerequisites>
+			<li>ShipTurretPlasma</li>
+		</researchPrerequisites>
+		<size>(1,1)</size>
+	</ThingDef>
+	<ThingDef ParentName="BaseShipArtilleryWeapon">
+		<defName>AOTC-SM-ShipTurret_PlasmaTopSmall</defName>
+		<label>Stable Matter plasma</label>
+		<description>Small plasma cannon built for starfighters. Medium-range and balanced.</description>
+		<graphicData>
+			<texPath>Things/Building/Ship/TurretPlasmaSmallSmall</texPath>
+			<drawSize>(1,1)</drawSize>
+		</graphicData>
+		<verbs>
+			<li>
+				<label>fire plasma</label>
+				<verbClass>SaveOurShip2.Verb_LaunchProjectileShip</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<range>1000</range>
+				<minRange>31.9</minRange>
+				<warmupTime>1.5</warmupTime>
+				<forcedMissRadius>1</forcedMissRadius>
+				<noiseRadius>4</noiseRadius>
+				<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+				<soundCast>ShipCombatPlasma</soundCast>
+				<requireLineOfSight>false</requireLineOfSight>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+				<defaultProjectile>Proj_ShipTurretPlasmaSmall</defaultProjectile>
+				<spawnDef>Bullet_Fake_Plasma</spawnDef>
+				<rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
+			</li>
+		</verbs>
+	</ThingDef>
+	<!-- Small Railgun -->
+	<ThingDef ParentName="ShipTurretBuilding">
+		<defName>AOTC-SM-ShipTurret_KineticSmall</defName>
+		<label>Stable Matter small railgun turret</label>
+		<designatorDropdown>ShipTurrets_Kinetic</designatorDropdown>		
+		<description>A starfighter turret that accelerates metal slugs to relativistic speeds. Can hit targets at long range. Capable of ship ground defense.\n\nCan be safely placed in rooms as it sticks out on top of the ship.\nMust be connected to a pilot/tactical console or AI core via the heat network.\nRequires sufficient stored power and heat capacity to function. \n\nThis particular model is much smaller, but deals drastically less damage with less efficiency.</description>
+		<graphicData>
+			<texPath>Things/Building/Ship/Hardpoint_1x1</texPath>
+			<drawSize>(1,1)</drawSize>
+		</graphicData>
+		<comps>
+			<li Class="CompProperties_Stunnable">
+				<affectedDamageDefs>
+					<li>EMP</li>
+				</affectedDamageDefs>
+			</li>
+			<li Class="SaveOurShip2.CompProps_ShipHeat">
+				<compClass>SaveOurShip2.CompShipHeat</compClass>
+				<showOnRoof>true</showOnRoof>
+				<heatPerPulse>5</heatPerPulse>
+				<energyToFire>30</energyToFire>
+				<optRange>150</optRange>
+				<maxRange>150</maxRange>
+				<projectileSpeed>4</projectileSpeed>
+				<threat>5</threat>
+				<groundDefense>true</groundDefense>
+				<groundProjectile>Bullet_Ground_KineticSmall</groundProjectile>
+				<groundMissRadius>2</groundMissRadius>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>100</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+		</comps>
+		<building>
+			<turretGunDef>ShipTurret_KineticTop</turretGunDef>
+			<turretBurstWarmupTime>0.05</turretBurstWarmupTime>
+			<turretBurstCooldownTime>1.5</turretBurstCooldownTime>
+			<turretTopDrawSize>1</turretTopDrawSize>
+		</building>
+		<costList>
+			<SNS_StableMatter>40</SNS_StableMatter>
+			<Uranium>10</Uranium>
+			<Plasteel>40</Plasteel>
+			<ComponentSpacer>2</ComponentSpacer>
+		</costList>
+		<uiIconPath>Things/Building/Ship/TurretKinetic_SmSmall_MenuIcon</uiIconPath>
+		<researchPrerequisites>
+			<li>ShipTurretKinetic</li>
+		</researchPrerequisites>
+		<size>(1,1)</size>
+	</ThingDef>
+	<ThingDef ParentName="BaseShipArtilleryWeapon">
+		<defName>AOTC-SM-ShipTurret_KineticTopSmall</defName>
+		<label>Stable Matter railgun</label>
+		<description>Small railgun. Best used at long range.</description>
+		<graphicData>
+			<texPath>Things/Building/Ship/TurretKineticSmallSmall</texPath>
+			<drawSize>(1,1)</drawSize>
+		</graphicData>
+		<verbs>
+			<li>
+				<label>shoot slug</label>
+				<verbClass>SaveOurShip2.Verb_LaunchProjectileShip</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<range>1500</range>
+				<minRange>31.9</minRange>
+				<warmupTime>0.5</warmupTime>
+				<forcedMissRadius>1</forcedMissRadius>
+				<noiseRadius>4</noiseRadius>
+				<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+				<soundCast>ShipCombatKinetic</soundCast>
+				<requireLineOfSight>false</requireLineOfSight>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+				<defaultProjectile>Proj_ShipTurretKineticSmall</defaultProjectile>
+				<spawnDef>Bullet_Fake_Kinetic</spawnDef>
+				<rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
+			</li>
+		</verbs>
+	</ThingDef>
+	<!-- small Artillery -->
+	<ThingDef ParentName="ShipTurretBuilding">
+		<defName>AOTC-SM-ShipTurret_ACISmall</defName>
+		<label>Stable Matter small cannon turret</label>
+		<designatorDropdown>ShipTurrets_AC</designatorDropdown>
+		<description>A starfighter turret that rapidly accelerates uranium slugs. Requires ammunition, but costs zero energy and very little heat to fire. Only useful at close range. Can be set to intercept torpedoes rather than firing at the enemy ship.\n\nMust be connected to a pilot/tactical console or AI core via the heat network.\nRequires sufficient stored power and heat capacity to function. \n\nThis particular model is much smaller, but deals drastically less damage with less efficiency.</description>
+			<graphicData>
+			<texPath>Things/Building/Ship/HardpointYellow</texPath>
+			<drawSize>(1,1)</drawSize>
+		</graphicData>
+		<comps>
+			<li Class="CompProperties_Stunnable">
+				<affectedDamageDefs>
+					<li>EMP</li>
+				</affectedDamageDefs>
+			</li>
+			<li Class="SaveOurShip2.CompProps_ShipHeat">
+				<compClass>SaveOurShip2.CompShipHeat</compClass>
+				<showOnRoof>true</showOnRoof>
+				<heatPerPulse>1</heatPerPulse>
+				<energyToFire>0</energyToFire>
+				<optRange>50</optRange>
+				<maxRange>50</maxRange>
+				<projectileSpeed>4</projectileSpeed>
+				<pointDefense>true</pointDefense>
+				<groundDefense>true</groundDefense>
+				<groundProjectile>Bullet_Ground_ACI_Small</groundProjectile>
+				<groundMissRadius>4</groundMissRadius>
+				<threat>5</threat>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>125</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<fuelLabel>Shots until rearm</fuelLabel>
+				<fuelGizmoLabel>Uranium slugs</fuelGizmoLabel>
+				<outOfFuelMessage>Cannot shoot: No slugs</outOfFuelMessage>
+				<fuelFilter>
+					<thingDefs>
+						<li>Uranium</li>
+					</thingDefs>
+				</fuelFilter>
+				<fuelCapacity>20</fuelCapacity>
+				<initialFuelPercent>1</initialFuelPercent>
+				<autoRefuelPercent>0.9</autoRefuelPercent>
+				<targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+				<showFuelGizmo>true</showFuelGizmo>
+				<minimumFueledThreshold>1</minimumFueledThreshold>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				<fuelIconPath>UI/Overlays/Barrel</fuelIconPath>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+		</comps>
+		<building>
+			<turretGunDef>ShipTurret_ACITop</turretGunDef>
+			<turretBurstWarmupTime>0.05</turretBurstWarmupTime>
+			<turretBurstCooldownTime>0.5</turretBurstCooldownTime>
+			<turretTopDrawSize>1</turretTopDrawSize>
+		</building>
+		<costList>
+			<SNS_StableMatter>50</SNS_StableMatter>
+			<Uranium>25</Uranium>
+			<Plasteel>40</Plasteel>
+			<ComponentSpacer>1</ComponentSpacer>
+		</costList>
+		<uiIconPath>Things/Building/Ship/TurretACI_SmSmall_MenuIcon</uiIconPath>
+		<researchPrerequisites>
+			<li>ShipTurretAC</li>
+		</researchPrerequisites>
+		<size>(1,1)</size>
+	</ThingDef>
+	<ThingDef ParentName="BaseShipArtilleryWeapon">
+		<defName>AOTC-SM-ShipTurret_ACITopSmall</defName>
+		<label>Stable Matter small autocannon</label>
+		<description>Small ship cannon. Best used at short range.</description>
+		<graphicData>
+			<texPath>Things/Building/Ship/Turret_ACISmall</texPath>
+		</graphicData>
+		<verbs>
+			<li>
+				<label>shoot slug</label>
+				<verbClass>SaveOurShip2.Verb_LaunchProjectileShip</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<minRange>31.9</minRange>
+				<range>500</range>
+				<warmupTime>0.5</warmupTime>
+				<forcedMissRadius>1</forcedMissRadius>
+				<burstShotCount>8</burstShotCount>
+				<noiseRadius>10</noiseRadius>
+				<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+				<soundCast>ShipCombatACI</soundCast>
+				<requireLineOfSight>false</requireLineOfSight>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+				<defaultProjectile>Proj_ShipTurretACISmall</defaultProjectile>
+				<spawnDef>Bullet_Fake_ACI</spawnDef>
+				<rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
+			</li>
+		</verbs>
+	</ThingDef>
+</Defs>

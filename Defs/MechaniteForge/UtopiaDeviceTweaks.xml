@@ -2,28 +2,28 @@
 <Defs>	
 	<RecipeDef ParentName="SNS_PinnacleFabricator_Item">
 		<defName>SNS_Production_PinnacleFabricator_AddictionPurifier</defName>
-		<workAmount>1</workAmount>
+		<workAmount>20</workAmount>
 		<label>Draw Addiction Purifier</label>
 		<description>Forge Addiction Purifier from nothingness.</description>
 		<products><MFAddictionPurifier>1</MFAddictionPurifier></products>
 	</RecipeDef>
 	<RecipeDef ParentName="SNS_PinnacleFabricator_Item">
 		<defName>SNS_Production_PinnacleFabricator_MFMechanitesBase</defName>
-		<workAmount>1</workAmount>
+		<workAmount>20</workAmount>
 		<label>Draw Mechanites</label>
 		<description>Forge 100 Mechanites from nothingness.</description>
 		<products><MFMechanitesBase>100</MFMechanitesBase></products>
 	</RecipeDef>
 	<RecipeDef ParentName="SNS_PinnacleFabricator_Item">
 		<defName>SNS_Production_PinnacleFabricator_MFPeithium</defName>
-		<workAmount>1</workAmount>
+		<workAmount>20</workAmount>
 		<label>Draw Peithium</label>
 		<description>Forge 10 Peithium from nothingness.</description>
 		<products><MFPeithium>10</MFPeithium></products>
 	</RecipeDef>
 	<RecipeDef ParentName="SNS_PinnacleFabricator_Item">
 		<defName>SNS_Production_PinnacleFabricator_MFHerculium</defName>
-		<workAmount>1</workAmount>
+		<workAmount>20</workAmount>
 		<label>Draw Herculium</label>
 		<description>Forge 10 Herculium from nothingness.</description>
 		<products><MFHerculium>10</MFHerculium></products>

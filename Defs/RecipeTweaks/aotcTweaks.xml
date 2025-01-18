@@ -3,35 +3,43 @@
 	
 	<RecipeDef ParentName="SNS_PinnacleFabricator_Item">
 		<defName>SNS_Production_PinnacleFabricator_Beer</defName>
-		<workAmount>1</workAmount>
+		<workAmount>10</workAmount>
 		<label>Draw Beer</label>
 		<description>Forge 50 Beer from nothingness.</description>
 		<products><Beer>50</Beer></products>
 	</RecipeDef>
+	<RecipeDef ParentName="SNS_PinnacleFabricator_Item">
+		<defName>SNS_Production_PinnacleFabricator_SNS_P_KnockoutGun</defName>
+		<workAmount>10000</workAmount>
+		<label>Draw PSI Supressor</label>
+		<description>Forge 10 Herculium from nothingness.</description>
+		<products><SNS_P_KnockoutGun>1</SNS_P_KnockoutGun></products>
+	</RecipeDef>
+	
 
-	<!-- Defs below this line came from AOTC-Custom edition. -->
+	<!-- Defs below this line came from AOTC-Custom edition. I have changed them by adding more work needed for production -->
 	<!-- Smokeleaf Leaves -->
 	<RecipeDef ParentName="SNS_PinnacleFabricator_Item">
-		<defName>SNS_Production_PinnacleFabricator_SmokeleafLeaves</defName>
-		<workAmount>1</workAmount>
+		<defName>SNS_P_PinnacleFabricator_SmokeleafLeaves</defName>
+		<workAmount>20</workAmount>
 		<label>Draw Smokeleaf Leaves</label>
-		<description>Forge 5000 Smokeleaf Leaves from nothingness.</description>
-		<products><SmokeleafLeaves>5000</SmokeleafLeaves></products>
+		<description>Forge 500 Smokeleaf Leaves from nothingness.</description>
+		<products><SmokeleafLeaves>500</SmokeleafLeaves></products>
 	</RecipeDef>
 	<!-- Eternity Cell -->
 	<RecipeDef ParentName="SNS_PinnacleFabricator_Item">
-		<defName>SNSCE_Production_PinnacleFabricator_EternityCell</defName>
-		<workAmount>1</workAmount>
+		<defName>SNS_P_PinnacleFabricator_EternityCell</defName>
+		<workAmount>1000</workAmount>
 		<label>Pattern an Eternity Cell</label>
 		<description>Forge an Eternity Cell from nothingness.</description>
 		<products><SNS_Hidden>1</SNS_Hidden></products>
 	</RecipeDef>
 	<!-- Psychoid Leaves -->
 	<RecipeDef ParentName="SNS_PinnacleFabricator_Item">
-		<defName>SNS_Production_PinnacleFabricator_PsychoidLeaves</defName>
-		<workAmount>1</workAmount>
+		<defName>SNS_P_PinnacleFabricator_PsychoidLeaves</defName>
+		<workAmount>20</workAmount>
 		<label>Draw Psychoid Leaves</label>
-		<description>Forge 5000 Psychoid Leaves from nothingness.</description>
-		<products><PsychoidLeaves>5000</PsychoidLeaves></products>
+		<description>Forge 500 Psychoid Leaves from nothingness.</description>
+		<products><PsychoidLeaves>500</PsychoidLeaves></products>
 	</RecipeDef>
 </Defs>

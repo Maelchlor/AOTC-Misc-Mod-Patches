@@ -1,0 +1,157 @@
+<Defs>
+
+  <!--=============== Mini-turret ===============-->
+
+		
+  <ThingDef ParentName="BuildingBase">
+    <defName>AOTC-SM-Turret_MiniTurretLaser</defName>
+    <label>Ship energy turret</label>
+    <description>An anti-personnel laser turret built for dealing with close range raider parties. This powerful laser turret is always active, and requires more electricity compared to other turrets.</description>
+    <thingClass>Building_TurretGun</thingClass>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <graphicData>
+	  <texPath>Things/Building/Ship/Hardpoint</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+      <damageData>
+        <rect>(0.2,0.2,0.6,0.6)</rect>
+      </damageData>
+      <shadowData>
+        <volume>(0.0,0.0,0.0)</volume>
+        <offset>(0,0,0)</offset>
+      </shadowData>
+    </graphicData>
+    <uiIconPath>Things/Building/Ship/TurretRaider_MenuIcon</uiIconPath>
+    <uiIconScale>0.90</uiIconScale>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+    <stealable>false</stealable>
+    <rotatable>false</rotatable>
+    <thingCategories>
+      <li>BuildingsSecurity</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>10000</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <WorkToBuild>10000</WorkToBuild>
+      <Mass>50</Mass>
+      <ShootingAccuracyTurret>0.97</ShootingAccuracyTurret>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <comps>
+			<li Class="SaveOurShip2.CompProps_ShipCachePart">
+				<isHull>true</isHull>
+				<hermetic>true</hermetic>
+				<isPlating>true</isPlating>
+			</li>
+			<li Class="SaveOurShip2.CompProps_ShipHeat">
+				<compClass>SaveOurShip2.CompShipHeatSource</compClass>
+				<threat>3</threat>
+			</li>
+      <li Class="CompProperties_Stunnable">
+        <affectedDamageDefs>
+          <li>Stun</li>
+          <li>EMP</li>
+        </affectedDamageDefs>
+      </li>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>500</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Explosive">
+        <wickTicks>240</wickTicks>
+        <explosiveRadius>0</explosiveRadius>
+        <explosiveDamageType>Bomb</explosiveDamageType>
+      </li>
+      <li Class="CompProperties_Breakdownable"/>
+      <li Class="CompProperties_Stunnable">
+        <useLargeEMPEffecter>true</useLargeEMPEffecter>
+        <empChancePerTick>0.03</empChancePerTick>
+        <affectedDamageDefs>
+          <li>EMP</li>
+        </affectedDamageDefs>
+      </li>
+    </comps>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <hasTooltip>true</hasTooltip>
+		<costList>
+			<SNS_StableMatter>40</SNS_StableMatter>
+			<Uranium>10</Uranium>
+			<PlaSNS_StableMatter>40</PlaSNS_StableMatter>
+			<ComponentSpacer>2</ComponentSpacer>
+		</costList>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <designationCategory>Ship</designationCategory>
+    <constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+    <building>
+      <combatPower>100</combatPower>   <!-- same as a scavenger -->
+      <ai_combatDangerous>true</ai_combatDangerous>
+      <turretGunDef>Gun_MiniTurretLaser</turretGunDef>
+      <turretBurstCooldownTime>1</turretBurstCooldownTime>
+	  <shipPart>true</shipPart>
+    </building>
+    <placeWorkers>
+      <li>PlaceWorker_ShowTurretRadius</li>
+	  <li>SaveOurShip2.PlaceWorker_OnShipHull</li>
+    </placeWorkers>
+    <designationHotKey>Misc2</designationHotKey>
+    <researchPrerequisites>
+      <li>GunTurrets</li>
+    </researchPrerequisites>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseGrenadeProjectile">
+    <defName>Bullet_MiniTurretLaserShot</defName>
+    <label>energy turret laser shot</label>
+    <graphicData>
+	  <texPath>Things/Projectile/ShipTurretKinetic</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bomb</damageDef>
+	  <explosionRadius>1</explosionRadius>
+      <damageAmountBase>22</damageAmountBase>
+      <speed>160</speed>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseWeaponTurret">
+    <defName>AOTC-SM-Gun_MiniTurretLaser</defName>
+    <label>Ship energy turret gun</label>
+    <description>An anti-personnel laser turret built for dealing with close range raider parties. This powerful laser turret is always active, and requires more electricity compared to other turrets.</description>
+    <graphicData>
+      <texPath>Things/Building/Ship/Turret_Raider</texPath>
+			<drawSize>(1,1)</drawSize>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <AccuracyTouch>0.100</AccuracyTouch>
+      <AccuracyShort>0.90</AccuracyShort>
+      <AccuracyMedium>0.80</AccuracyMedium>
+      <AccuracyLong>0.70</AccuracyLong>
+      <RangedWeapon_Cooldown>0.25</RangedWeapon_Cooldown>
+      <DeteriorationRate>0</DeteriorationRate>
+      <Mass>50</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <defaultProjectile>Bullet_MiniTurretLaserShot</defaultProjectile>
+        <warmupTime>0.05</warmupTime>
+        <minRange>5</minRange>
+        <range>150.0</range>
+	    <explosionRadius>1</explosionRadius>
+        <ticksBetweenBurstShots>4</ticksBetweenBurstShots>
+        <burstShotCount>10</burstShotCount>
+        <soundCast>Shot_Autocannon</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+  </ThingDef>
+
+	
+</Defs>

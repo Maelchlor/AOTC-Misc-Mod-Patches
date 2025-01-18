@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef ParentName="BaseGun">
+		<defName>SNS_P_KnockoutGun</defName>
+		<label>The Supression Rifle</label>
+		<description>Using the B.E.H.O.L.D.E.R as a base, a new type of bullet was created. the intention to take them alive.</description>
+		<graphicData>
+			<texPath>Things/Item/Equipment/WeaponRanged/SNS/Gen4/Beholder</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<soundInteract>Interact_Rifle</soundInteract>
+		<useHitPoints>false</useHitPoints>
+		<statBases>
+			<WorkToMake>15000</WorkToMake>
+			<MarketValue>5000000</MarketValue> <!-- It's really only set this high to prevent pawns from randomly spawning with this, not that it should ever happen. -->
+			<Mass>2.5</Mass>
+			<Flammability>0.0</Flammability>
+			<AccuracyTouch>1</AccuracyTouch>
+			<AccuracyShort>1</AccuracyShort>
+			<AccuracyMedium>1</AccuracyMedium>
+			<AccuracyLong>1</AccuracyLong>
+			<RangedWeapon_Cooldown>0</RangedWeapon_Cooldown>
+			<DeteriorationRate>0.00</DeteriorationRate>
+			<Beauty>250</Beauty>
+		</statBases>
+		<tradeTags />
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>SNS_P_PSISurpession_Projectile</defaultProjectile>
+
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+				<requireLineOfSight>false</requireLineOfSight>
+
+				<forcedMissRadius>0.1</forcedMissRadius>
+				<warmupTime>0.1</warmupTime>
+				<range>250</range>
+				<soundCast>ChargeLance_Fire</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>30</muzzleFlashScale>
+			</li>
+		</verbs>
+		<techLevel>Archotech</techLevel>
+		<smeltable>false</smeltable>
+	</ThingDef>
+	<ThingDef Name="SNS_P_Projectile_PSIBullet" ParentName="BaseBullet">
+		<defName>SNS_P_PSISurpession_Projectile</defName>
+		<label>Supression Projectile</label>
+		<graphicData>
+			<texPath>Things/Projectile/SNS/Gen4/Bullet_Terminus</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<damageDef>PSISupression_Bullet</damageDef>
+			<damageAmountBase>1</damageAmountBase>
+			<speed>500</speed>
+		</projectile>
+	</ThingDef>
+	
+	<DamageDef Name="PSISupression_Bullet">
+		<defName>PSISupression_Bullet</defName>
+		<label>SupressionBullet</label>
+		<workerClass>DamageWorker_AddInjury</workerClass>
+		<externalViolence>true</externalViolence>
+		<deathMessage>{0} has been shot to death.</deathMessage>
+		<hediff>Gunshot</hediff>
+		<harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+		<additionalHediffs>
+		  <li>
+			<hediff>AOTC_PSISupress</hediff>
+			<severityPerDamageDealt>0.5</severityPerDamageDealt>
+		  </li>
+		</additionalHediffs>
+		<impactSoundType>Bullet</impactSoundType>
+		<armorCategory>Sharp</armorCategory>
+		<overkillPctToDestroyPart>0~0.7</overkillPctToDestroyPart>
+		<isRanged>true</isRanged>
+		<makesAnimalsFlee>true</makesAnimalsFlee>
+		<causeStun>true</causeStun>
+		<defaultArmorPenetration>.9</defaultArmorPenetration>
+	</DamageDef>
+</Defs>

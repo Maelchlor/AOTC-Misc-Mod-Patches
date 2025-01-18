@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef ParentName="ShipTurretBuilding">
+		<defName>shipStablematterTurret_Laser_Large</defName>
+		<label>Stable matter large laser turret</label>
+		<designatorDropdown>ShipTurrets_Laser</designatorDropdown>
+		<description>A large turret that fires a powerful laser. While it can inflict devastating damage.\n Due to stable matter, range is much less of an issue.\n\nCan be safely placed in rooms as it sticks out on top of the ship.\nMust be connected to a pilot/tactical console or AI core via the heat network.\nRequires sufficient stored power and heat capacity to function.</description>
+		<graphicData>
+			<texPath>Things/Building/Ship/HardpointRed</texPath>
+			<drawSize>(3,3)</drawSize>
+		</graphicData>
+		<comps>
+			<li Class="CompProperties_Stunnable">
+				<affectedDamageDefs>
+					<li>EMP</li>
+				</affectedDamageDefs>
+			</li>
+			<li Class="SaveOurShip2.CompProps_ShipHeat">
+				<compClass>SaveOurShip2.CompShipHeat</compClass>
+				<showOnRoof>true</showOnRoof>
+				<heatPerPulse>40</heatPerPulse>
+				<energyToFire>240</energyToFire>
+				<optRange>50</optRange>
+				<maxRange>400</maxRange>
+				<projectileSpeed>30</projectileSpeed>
+				<singleFireSound>ShipCombatLaserLarge</singleFireSound>
+				<threat>80</threat>
+				<laserColor>(232,204,255)</laserColor>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>150</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+		</comps>
+		<building>
+			<turretGunDef>ShipTurret_LaserTop_Large</turretGunDef>
+			<turretBurstWarmupTime>0.05</turretBurstWarmupTime>
+			<turretBurstCooldownTime>1.0</turretBurstCooldownTime>
+			<turretTopDrawSize>4</turretTopDrawSize>
+		</building>
+		<costList>
+			<SNS_StableMatter>240</SNS_StableMatter>
+			<Uranium>80</Uranium>
+			<Plasteel>240</Plasteel>
+			<ComponentSpacer>12</ComponentSpacer>
+		</costList>
+		<uiIconPath>Things/Building/Ship/TurretLaser_MenuIcon</uiIconPath>
+		<researchPrerequisites>
+			<li>ShipTurretMedium</li>
+		</researchPrerequisites>
+		<size>(3,3)</size>
+	</ThingDef>
+</Defs>
